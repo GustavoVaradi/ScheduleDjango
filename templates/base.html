@@ -6,28 +6,29 @@
 
   <title>Agenda</title>
 
-  {% include 'partials/_head.html'}
+  {% include 'partials/_head.html'%}
 
   <!-- Bootstrap core CSS -->
-  <link href="{ % static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
 </head>
 
 <body>
 
-  {% include 'partials/_nav.html'}
+  {% include 'partials/_nav.html'%}
+
   <!-- Page Content -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        {% block conteudo %} {% endblock %}
+        {%block conteudo %} {%endblock%}
       </div>
     </div>
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{ % static ''vendor/jquery/jquery.slim.min.js' %}"></script>
-  <script src="{ % static ''vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery/jquery.slim.min.js'%}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
 
 </body>
 

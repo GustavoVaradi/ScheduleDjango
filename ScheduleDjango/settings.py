@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Contacts.apps.ContactConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 MIDDLEWARE = [
@@ -116,9 +116,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILE_DIRS = [
-    BASE_DIR / 'templates/static'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'templates/static',
 ]
 
 # Default primary key field type

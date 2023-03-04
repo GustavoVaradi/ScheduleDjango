@@ -3,5 +3,18 @@ from .models import Contacts, Category
 
 # Register your models here.
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'surname', 'phone', 'mail', 'creation_date')
+
+    list_display_links = ('id', 'name', 'surname')
+
+    list_filter = ('name', 'surname')
+
+    list_per_page = 10
+
+    search_fields = ('name', 'id', 'creation_date')
+
+    
+
 admin.site.register(Category)
-admin.site.register(Contacts)
+admin.site.register(Contacts, ContactAdmin)

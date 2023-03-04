@@ -8,37 +8,23 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>Telefone</th>
-                <th>Categoria</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Phone</th>
+                <th>Category</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <a href="#"> João</a>
-                </td>
-                <td>Miranda</td>
-                <td>35 9 5555-5555</td>
-                <td>Família</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#"> Leandro</a>
-                </td>
-                <td>Moreira</td>
-                <td>35 9 8888-5555</td>
-                <td>Família</td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="#"> Fátima</a>
-                </td>
-                <td>Oliveira</td>
-                <td>35 9 9999-4352</td>
-                <td>Conhecidos</td>
-            </tr>
+            {%  for contact in contacts %}
+                <tr>
+                    <td>
+                        <a href="#">{{ contact.name }}</a>
+                    </td>
+                    <td>{{ contact.surname }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td>{{ contact.category }}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 

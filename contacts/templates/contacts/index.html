@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Phone</th>
@@ -17,16 +18,15 @@
         <tbody>
 
             {%  for contact in contacts %}
-                {% if contact.show %}
-                    <tr>
-                        <td>
-                            <a href="{% url 'show_contact' contact.id  %}">{{ contact.name }} {{ contact.surname}}</a>
-                        </td>
-                        <td>{{ contact.surname }}</td>
-                        <td>{{ contact.phone }}</td>
-                        <td>{{ contact.category }}</td>
-                    </tr>
-                {% endif %}
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>
+                        <a href="{% url 'show_contact' contact.id  %}">{{ contact.name }} {{ contact.surname}}</a>
+                    </td>
+                    <td>{{ contact.surname }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td>{{ contact.category }}</td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>

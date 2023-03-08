@@ -8,7 +8,7 @@ class ContactAdmin(admin.ModelAdmin):
 
     list_display_links = ('id', 'name', 'surname')
 
-    list_filter = ('name', 'surname')
+    # list_filter = ('name', 'surname')
 
     list_per_page = 10
 

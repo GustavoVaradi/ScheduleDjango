@@ -2,11 +2,15 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models.functions import Concat
 from django.core.paginator import Paginator
 from django.db.models import Q, Value
+from django.contrib import messages
 from django.http import Http404
 from .models import Contacts
 
 # Create your views here.
 def index(request):
+
+    messages.add_message(request, messages.ERROR, 'DEU RUIM MERMÃO')
+
     # contacts = Contacts.objects.all() => semelhante a consulta all em SQL
     contacts = Contacts.objects.order_by('category').filter(
         show = True
@@ -36,8 +40,8 @@ def search(request):
 
     word = request.GET.get('word')
 
-    if word is None:
-        raise Http404
+    if word is None or not word:
+        raise Http404()
 
     field = Concat('name', Value(' '), 'surname')
 
